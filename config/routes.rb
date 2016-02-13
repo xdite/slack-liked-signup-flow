@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
+  as :user do
+      patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+  devise_for :users, :controllers => { :confirmations => "confirmations" }
+
+  
   root 'pages#welcome'
   
   # The priority is based upon order of creation: first created -> highest priority.
