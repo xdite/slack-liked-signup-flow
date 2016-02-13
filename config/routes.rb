@@ -1,3 +1,4 @@
+require 'subdomain'
 Rails.application.routes.draw do
 
 
@@ -8,9 +9,11 @@ Rails.application.routes.draw do
 
 
   constraints(Subdomain) do
-    match '/' => 'teams#show'
+    get '/' => 'teams#show'
   end
 
+  get "/signin" => "pages#signin"
+  post "/switch_domain" => "pages#switch_domain"
   root 'pages#welcome'
   
   # The priority is based upon order of creation: first created -> highest priority.
