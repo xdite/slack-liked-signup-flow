@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   include EmailConfirmable
   
+  has_many :team_users
+  has_many :teams, :through => :team_users, :source => :team
+
+  accepts_nested_attributes_for :teams
 
 end
 
