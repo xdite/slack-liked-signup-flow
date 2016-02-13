@@ -31,7 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'seo_helper', '~> 1.0'
-
+gem 'font-awesome-sass', '~> 4.5.0'
 gem "devise"
 gem "simple_form"
 
